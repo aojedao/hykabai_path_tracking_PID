@@ -30,7 +30,7 @@ public:
 	
     this->x_start = this->y_start = 0;
     //set up the publisher for the cmd_vel topic
-    cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("/cmd_vel_mux/input/teleop", 0.5);
+    cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 0.5);
 	geometry_msgs::Twist base_cmd;
     base_cmd.linear.x = base_cmd.linear.y = base_cmd.angular.z = 0;
  	  sub = nh_.subscribe("/odom", 1000, &RobotDriver::chatterCallback,this);
